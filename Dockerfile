@@ -16,6 +16,7 @@ RUN apt-get update && \
   libcurl4-openssl-dev mysql-client zipcmp libxrender1 libgeoip-dev unzip zipcmp file vim jhead \
   netcat-openbsd && \
   rm -rf /var/lib/apt/lists/* && \
-  gem install --force --no-ri --no-rdoc bundler -v '1.17.3' && \
+  gem update --no-document --system 2.7.9 && \
+  gem install --force --no-document bundler -v '1.17.3' && \
   bundle config --global silence_root_warning 1 && \
   chmod +x /usr/bin/wait-for
