@@ -19,7 +19,7 @@ RUN apt-get update && \
 # Install system dependencies
 RUN apt-get update && \
   apt-get install -y curl software-properties-common && \
-  apt-get install -y build-essential libpq-dev ruby2.3 ruby2.3-dev nodejs libmysqlclient-dev exiv2 \
+  apt-get install -y build-essential libpq-dev ruby2.4 ruby2.4-dev nodejs libmysqlclient-dev exiv2 \
   libexiv2-dev imagemagick cmake git pkg-config python libxml2-dev libxslt1-dev \
   libcurl4-openssl-dev mysql-client zipcmp libxrender1 libgeoip-dev unzip zipcmp file vim jhead \
   netcat-openbsd yarn && \
