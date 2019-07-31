@@ -11,7 +11,8 @@ RUN apt-get update && \
   curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
   curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
   echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-  apt-add-repository -y ppa:brightbox/ruby-ng && \
+  apt-add-repository --yes --no-update ppa:brightbox/ruby-ng && \
+  apt-add-repository --yes --no-update ppa:maxmind/ppa && \
   chmod +x /usr/bin/wait-for && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
@@ -22,7 +23,7 @@ RUN apt-get update && \
   apt-get install -y build-essential libpq-dev ruby2.4 ruby2.4-dev nodejs libmysqlclient-dev exiv2 \
   libexiv2-dev imagemagick cmake git pkg-config python libxml2-dev libxslt1-dev \
   libcurl4-openssl-dev mysql-client zipcmp libxrender1 libgeoip-dev unzip zipcmp file vim jhead \
-  netcat-openbsd yarn && \
+  netcat-openbsd yarn libmaxminddb0 geoipupdate && \
   gem update --no-document --system 2.7.9 && \
   gem install --force --no-document bundler -v '1.17.3' && \
   bundle config --global silence_root_warning 1 && \
